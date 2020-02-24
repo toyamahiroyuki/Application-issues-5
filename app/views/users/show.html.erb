@@ -32,6 +32,8 @@
 			</td>
 			<td><%= link_to book.title,book, class: "book_#{book.id}" %></td>
 			<td><%= book.body %></td>
+			<td>フォロー数:<%= @user.followings.count %></td>
+            <td>フォロワー数:<%= @user.followers.count %></td>
 			<td>コメント数は<%= book.book_comments.count %>件です</td>
             <td>
 			<% if book.favorited_by?(current_user) %>
@@ -49,6 +51,7 @@
                     <% end %>
              <% end %>
              </td>
+
 		</tr>
 		<% end %>
 	</tbody>
